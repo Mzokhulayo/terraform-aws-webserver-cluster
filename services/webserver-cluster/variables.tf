@@ -51,3 +51,26 @@ variable "max_size" {
   description = "The maximum number of EC2 instances in the ASG"
   type = number
 }
+
+variable "custom_tags" {
+  description = "Custom tags to set on the Instances in the ASG"
+  type = map(string)
+  default = {}
+}
+
+variable "enable_autoscaling" {
+  description = "If set to tre, ebable auto scaling"
+  type = bool
+}
+
+variable "ami" {
+  description = "The AMI to run in the cluster"
+  type = string
+  default = "ami-0c02fb55956c7d316"
+}
+
+variable "server_text" {
+  description ="The text the webserver should return"
+  type  = string
+  default = "Hello, World: Welcome to my Web server By Mzokhulayo Mdubeki"
+}
